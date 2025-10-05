@@ -1,10 +1,11 @@
 body {
     background-color: #07131a;
-    color: #ffffff;
-    background: url(../images/bg.JPG) no-repeat center center fixed;
-    font-family: "Roboto Mono", monospace;
-    line-height: 1.4;
+    color: #7eb3bf;
+    background: url(../images/backgrond.png) no-repeat center center fixed;
+    font-family: "VT323", monospace;
+    line-height: 1;
     padding: 32px 24px;
+    
 
 }
 
@@ -27,7 +28,7 @@ body {
 
 .header .subtitle {
     background-color:;
-    color: rgba(255, 255, 255, 0.7);
+    color: #7eb3bf;
     font-size: 19px;
     max-width: 1024px;
     margin: 0 auto;
@@ -42,16 +43,16 @@ body {
 }
 
 .card {
-    background-color: ;
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    background-color:  #FFE2C3;
     border-radius: 16px;
+    color: #0D3B75;
     padding: 32px;
     margin-bottom: 32px;
 
 }
 
 .card-header {
-    background-color:;
+    background-color:#FFE2C3;
     margin-bottom: 32px;
     font-size: 21px;
     text-align: center;
@@ -60,7 +61,7 @@ body {
 
 .form-group textarea {
     background-color: rgba(255, 255, 255, 0.05);
-    color: #ffffff;
+    color: #0D3B75;
     width: 100%;
     min-height: 120px;
     padding: 16px;
@@ -73,7 +74,7 @@ body {
 
 .form-group textarea:focus {
     outline: none;
-    border-color: #a655f7;
+    border-color: #7eb3bf;
 
 }
 
@@ -83,22 +84,27 @@ body {
 }
 
 .form-group .btn-magic {
-    width: 100%;
+    width: 50%;
+    z-index: 99;
+    display: block;
+    margin: 0 auto;
     padding: 16px 32px;
-    background: linear-gradient(90deg, #a655f7 0%, #ff80aa 100%);
+    background:#114c59;
     color: #ffffff;
     border: none;
     border-radius: 8px;
     font-size: 17px;
     cursor: pointer;
     transition: all 0.3s ease;
+    font-family: "VT323", monospace;
 
 
 }
 
 .form-group .btn-magic:hover {
     transform: translateY(-2px);
-    background: linear-gradient(90deg, #ff80aa 0%, #a655f7 100%);
+    background: #3391a6;
+    font-family: "VT323", monospace;
 
 }
 
@@ -114,11 +120,12 @@ body {
 }
 
 .code-card {
-    background-color: #21242a;
+    background-color: #FFE2C3;
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 16px;
     padding: 24px;
     width: 50%;
+    color: #7d1b1b
 
 }
 
@@ -129,7 +136,7 @@ body {
 }
 
 .code-block {
-    background-color: #0a0c10;
+    background-color: #E45102;
     color: #5eead4;
     padding: 16px;
     border-radius: 8px;
@@ -138,4 +145,11 @@ body {
     white-space: pre-wrap;
     word-wrap: break-word;
 
+}
+
+.form-group textarea  {
+    font-family: "VT323", monospace;
+    font-weight: 400;
+    font-style: normal;
+    ;
 }
