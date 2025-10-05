@@ -1,0 +1,141 @@
+body {
+    background-color: #07131a;
+    color: #ffffff;
+    background: url(../images/bg.JPG) no-repeat center center fixed;
+    font-family: "Roboto Mono", monospace;
+    line-height: 1.4;
+    padding: 32px 24px;
+
+}
+
+.header {
+    background-color:;
+    margin: 40px;
+    z-index: 99;
+    position: center;
+    text-align: center;
+    max-width: 100%;
+
+}
+
+.header h1 {
+    background-color:;
+    margin-bottom: 16px;
+    font-size: 48px;
+    max-width: 100%;
+}
+
+.header .subtitle {
+    background-color:;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 19px;
+    max-width: 1024px;
+    margin: 0 auto;
+}
+
+.container {
+    background-color:;
+    max-width: 1024px;
+    margin: 0 auto;
+    z-index: 99;
+    position: relative;
+}
+
+.card {
+    background-color: ;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    padding: 32px;
+    margin-bottom: 32px;
+
+}
+
+.card-header {
+    background-color:;
+    margin-bottom: 32px;
+    font-size: 21px;
+    text-align: center;
+
+}
+
+.form-group textarea {
+    background-color: rgba(255, 255, 255, 0.05);
+    color: #ffffff;
+    width: 100%;
+    min-height: 120px;
+    padding: 16px;
+    border: 1px solid #474646;
+    border-radius: 8px;
+    font-size: 16px;
+    margin-bottom: 20px;
+
+}
+
+.form-group textarea:focus {
+    outline: none;
+    border-color: #a655f7;
+
+}
+
+.form-group textarea::placeholder {
+    color: #a19e9e;
+
+}
+
+.form-group .btn-magic {
+    width: 100%;
+    padding: 16px 32px;
+    background: linear-gradient(90deg, #a655f7 0%, #ff80aa 100%);
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    font-size: 17px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+
+}
+
+.form-group .btn-magic:hover {
+    transform: translateY(-2px);
+    background: linear-gradient(90deg, #ff80aa 0%, #a655f7 100%);
+
+}
+
+.preview-card {
+    display: none;
+
+}
+
+.code-grid {
+    display: flex;
+    gap: 24px;
+
+}
+
+.code-card {
+    background-color: #21242a;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    padding: 24px;
+    width: 50%;
+
+}
+
+.code-title {
+    font-size: 20px;
+    margin-bottom: 16px;
+
+}
+
+.code-block {
+    background-color: #0a0c10;
+    color: #5eead4;
+    padding: 16px;
+    border-radius: 8px;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 14px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+
+}

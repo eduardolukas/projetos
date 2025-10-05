@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>From Zero to Hired Programmer Week - Magic Background</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+        rel="stylesheet">
+    
+    <link rel="stylesheet" href="src/css/reset.css">
+    <link rel="stylesheet" href="src/css/estilos.css">
+    <link rel="stylesheet" href="src/css/responsivo.css">
+</head>
+
+<body>
+    <header class="header">
+        <h1>Magic Background</h1>
+        <p class="subtitle">Turn your ideas into amazing backgrounds with the power of AI. Describe what you imagine and watch the magic happen.</p>
+    </header>
+    <main class="container">
+        <section class="card main-card">
+            <h2 class="card-header">Describe the background you want</h2>
+            <form class="form-group">
+                <textarea id="description"
+                    placeholder="E.g.: a soft blue gradient going from light blue to dark blue"
+                    rows="5"></textarea>
+                <button id="generate-btn" class="btn-magic">
+                    <span id="btn-text">Generate Magic Background</span>
+                </button>
+            </form>
+        </section>
+        <section id="preview-section" class="preview-card"></section>
+        <section id="code-output" class="code-grid">
+            <div class="card code-card">
+                <h3 class="code-title">HTML Code</h3>
+                <pre id="html-code" class="code-block"></pre>
+            </div>
+            <div class="card code-card">
+                <h3 class="code-title">CSS Code</h3>
+                <pre id="css-code" class="code-block"></pre>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>

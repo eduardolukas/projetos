@@ -1,0 +1,25 @@
+@media (max-width: 768px) {
+    .header {
+        font-size: 30px;
+    }
+    .header h1 {
+        font-size: 40px;
+        text-align: center;
+    }
+    }
+    .subtitle {
+        font-size: 16px;
+        text-align: center;
+    }
+    .card-header {
+        font-size: 16px;
+    }
+    .code-grid {
+        flex-direction: column;
+    }
+    .code-card {
+        width: 100%;
+    }
+    .form-group .bnt-magic {
+        font-size: 16px;
+    }
