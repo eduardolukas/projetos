@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Lukas Eduardo – Desenvolvedor</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Estilos básicos -->
+  <style>
+    :root {
+      --bg-color: #0f172a;
+      --card-color: #111827;
+      --accent-color: #38bdf8;
+      --text-color: #e5e7eb;
+      --muted-color: #9ca3af;
+      --border-color: #1f2937;
+      --font-main: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-main);
+      background: radial-gradient(circle at top, #1f2937 0, var(--bg-color) 45%, #020617 100%);
+      color: var(--text-color);
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .page {
+      max-width: 960px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 24px 16px 40px;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 32px;
+      gap: 16px;
+    }
+
+    .brand {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .brand-title {
+      font-size: 1.6rem;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+    }
+
+    .brand-subtitle {
+      font-size: 0.9rem;
+      color: var(--muted-color);
+    }
+
+    nav {
+      display: flex;
+      gap: 16px;
+      font-size: 0.95rem;
+    }
+
+    nav a {
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      transition: all 0.15s ease-out;
+      color: var(--muted-color);
+      text-decoration: none;
+    }
+
+    nav a:hover {
+      border-color: var(--border-color);
+      color: var(--text-color);
+      background-color: rgba(15, 23, 42, 0.8);
+    }
+
+    main {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+      gap: 24px;
+      padding: 20px;
+      border-radius: 18px;
+      background: linear-gradient(
+        135deg,
+        rgba(15, 23, 42, 0.98),
+        rgba(8, 47, 73, 0.98)
+      );
+      border: 1px solid rgba(148, 163, 184, 0.15);
+      box-shadow: 0 18px 60px rgba(15, 23, 42, 0.9);
+    }
+
+    .hero-main {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.3);
+      background: rgba(15, 23, 42, 0.9);
+      font-size: 0.75rem;
+      color: var(--muted-color);
+      width: fit-content;
+    }
+
+    .hero-tag-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: var(--accent-color);
+      box-shadow: 0 0 0 5px rgba(56, 189, 248, 0.25);
+    }
+
+    .hero-title {
+      font-size: clamp(1.9rem, 3vw, 2.4rem);
+      letter-spacing: 0.02em;
+    }
+
+    .hero-title span {
+      color: var(--accent-color);
+    }
+
+    .hero-text {
+      font-size: 0.98rem;
+      color: var(--muted-color);
+      max-width: 540px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 4px;
+    }
+
+    .btn {
+      border-radius: 999px;
+      padding: 8px 18px;
+      font-size: 0.9rem;
+      border: 1px solid transparent;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+      transition: all 0.15s ease-out;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #0ea5e9, #22c55e);
+      color: #0b1120;
+      font-weight: 500;
+      box-shadow: 0 12px 32px rgba(56, 189, 248, 0.35);
+    }
+
+    .btn-primary:hover {
+      filter: brightness(1.05);
+      transform: translateY(-1px);
+      box-shadow: 0 16px 40px rgba(59, 130, 246, 0.4);
+      text-decoration: none;
+    }
+
+    .btn-ghost {
+      background: rgba(15, 23, 42, 0.8);
+      border-color: rgba(148, 163, 184, 0.3);
+      color: var(--muted-color);
+    }
+
+    .btn-ghost:hover {
+      background: rgba(15, 23, 42, 1);
+      border-color: rgba(148, 163, 184, 0.6);
+      color: var(--text-color);
+      text-decoration: none;
+    }
+
+    .hero-secondary {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      padding: 14px 14px 12px;
+      border-radius: 16px;
+      background: radial-gradient(circle at top, #1f2937 0, #020617 100%);
+      border: 1px solid rgba(15, 23, 42, 0.8);
+    }
+
+    .hero-bio {
+      font-size: 0.88rem;
+      color: var(--muted-color);
+    }
+
+    .hero-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 8px;
+      font-size: 0.8rem;
+    }
+
+    .hero-pill {
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.85);
+      border: 1px solid rgba(30, 64, 175, 0.8);
+      color: var(--muted-color);
+      text-align: center;
+    }
+
+    .section {
+      margin-top: 8px;
+      padding: 18px 16px;
+      border-radius: 16px;
+      background: rgba(15, 23, 42, 0.95);
+      border: 1px solid rgba(30, 64, 175, 0.7);
+      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.9);
+    }
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+      gap: 8px;
+    }
+
+    .section-title {
+      font-size: 1.05rem;
+      font-weight: 500;
+    }
+
+    .section-subtitle {
+      font-size: 0.8rem;
+      color: var(--muted-color);
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 12px;
+    }
+
+    .project-card {
+      padding: 12px 12px 10px;
+      border-radius: 14px;
+      background: radial-gradient(circle at top left, #0f172a 0, #020617 60%);
+      border: 1px solid rgba(30, 64, 175, 0.7);
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .project-name {
+      font-size: 0.95rem;
+      font-weight: 500;
+    }
+
+    .project-meta {
+      font-size: 0.75rem;
+      color: var(--muted-color);
+    }
+
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 4px;
+    }
+
+    .tag {
+      font-size: 0.7rem;
+      padding: 3px 8px;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.8);
+      border: 1px solid rgba(55, 65, 81, 0.9);
+      color: var(--muted-color);
+    }
+
+    .contact-list {
+      list-style: none;
+      display: grid;
+      gap: 6px;
+      font-size: 0.9rem;
+    }
+
+    .contact-item span {
+      color: var(--muted-color);
+      font-size: 0.8rem;
+    }
+
+    footer {
+      margin-top: auto;
+      padding: 12px 16px 4px;
+      font-size: 0.75rem;
+      color: var(--muted-color);
+      text-align: center;
+    }
+
+    /* Responsivo */
+    @media (max-width: 720px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      nav {
+        width: 100%;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+      }
+
+      .hero {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <div class="brand">
+        <div class="brand-title">Lukas Eduardo</div>
+        <div class="brand-subtitle">Canalizador industrial | Aspirante a Dev Web</div>
+      </div>
+      <nav>
+        <a href="#sobre">Sobre</a>
+        <a href="#projetos">Projetos</a>
+        <a href="#contato">Contato</a>
+      </nav>
+    </header>
+
+    <main>
+      <!-- Hero / Apresentação -->
+      <section class="hero">
+        <div class="hero-main">
+          <div class="hero-tag">
+            <span class="hero-tag-dot"></span>
+            Aberto a oportunidades como desenvolvedor júnior
+          </div>
+          <h1 class="hero-title">
+            Construindo soluções digitais, partindo da experiência industrial para o mundo da tecnologia.
+          </h1>
+          <p class="hero-text">
+            Brasileiro, 33 anos, vivendo em Lavradio – Portugal. Trabalho como canalizador industrial e estou em transição
+            para desenvolvimento web, começando por front-end e back-end com apoio de IA. Busco oportunidades para aprender
+            na prática, colaborar em projetos reais e crescer como desenvolvedor.
+          </p>
+          <div class="hero-actions">
+            <a href="#projetos" class="btn btn-primary">
+              Ver meus projetos
+            </a>
+            <a href="#contato" class="btn btn-ghost">
+              Falar comigo
+            </a>
+          </div>
+        </div>
+
+        <aside class="hero-secondary">
+          <p class="hero-bio">
+            Focado em criar interfaces simples, objetivas e fáceis de entender, com código limpo e boa organização.
+          </p>
+          <div class="hero-list">
+            <div class="hero-pill">Base em HTML, CSS e JavaScript</div>
+            <div class="hero-pill">Aprendendo front-end e back-end</div>
+            <div class="hero-pill">Experiência industrial e trabalho em equipe</div>
+            <div class="hero-pill">Aberto a estágios e vagas júnior</div>
+          </div>
+        </aside>
+      </section>
+
+      <!-- Sobre mim -->
+      <section id="sobre" class="section">
+        <div class="section-header">
+          <h2 class="section-title">Sobre mim</h2>
+          <span class="section-subtitle">Quem eu sou e o que busco</span>
+        </div>
+        <p style="font-size: 0.95rem; color: #d1d5db; margin-bottom: 6px;">
+          Meu nome é Lukas Eduardo de Oliveira, tenho 33 anos, sou brasileiro e moro em Portugal desde os 24 anos.
+          Atuo como canalizador industrial em uma empresa portuguesa, acostumado com rotinas exigentes, segurança e trabalho
+          em equipe.
+        </p>
+        <p style="font-size: 0.95rem; color: #d1d5db; margin-bottom: 6px;">
+          Estou em transição de carreira para desenvolvimento web, estudando front-end e back-end com apoio de inteligência
+          artificial para acelerar meu aprendizado. Meu objetivo é atuar como desenvolvedor júnior, começar a participar
+          de projetos reais e evoluir constantemente.
+        </p>
+        <p style="font-size: 0.95rem; color: #9ca3af;">
+          Tenho perfil prático, gosto de aprender fazendo, resolvendo problemas concretos e entregando valor de forma simples
+          e direta, tanto no código quanto na comunicação.
+        </p>
+      </section>
+
+      <!-- Projetos -->
+      <section id="projetos" class="section">
+        <div class="section-header">
+          <h2 class="section-title">Projetos</h2>
+          <span class="section-subtitle">Seleção de projetos em desenvolvimento</span>
+        </div>
+
+        <div class="projects-grid">
+          <!-- Projeto 1 -->
+          <article class="project-card">
+            <div class="project-name">Portfólio pessoal</div>
+            <div class="project-meta">
+              Página minimalista para apresentar biografia, projetos e contatos, focada em recrutadores.
+            </div>
+            <div class="project-tags">
+              <span class="tag">HTML</span>
+              <span class="tag">CSS</span>
+              <span class="tag">Responsivo</span>
+            </div>
+          </article>
+
+          <!-- Projeto 2 (exemplo futuro) -->
+          <article class="project-card">
+            <div class="project-name">Em breve: Aplicação simples de tarefas</div>
+            <div class="project-meta">
+              Projeto para praticar JavaScript, lógica de programação e manipulação do DOM com uma lista de tarefas dinâmica.
+            </div>
+            <div class="project-tags">
+              <span class="tag">JavaScript</span>
+              <span class="tag">DOM</span>
+              <span class="tag">Lógica</span>
+            </div>
+          </article>
+
+          <!-- Projeto 3 (exemplo futuro) -->
+          <article class="project-card">
+            <div class="project-name">Em breve: API básica com Node.js</div>
+            <div class="project-meta">
+              Primeira experiência com back-end, criando uma API simples para registrar e listar dados.
+            </div>
+            <div class="project-tags">
+              <span class="tag">Node.js</span>
+              <span class="tag">API</span>
+              <span class="tag">Back-end</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Contato -->
+      <section id="contato" class="section">
+        <div class="section-header">
+          <h2 class="section-title">Contato</h2>
+          <span class="section-subtitle">Como me encontrar</span>
+        </div>
+        <ul class="contact-list">
+          <li class="contact-item">
+            <span>E-mail</span><br>
+            <a href="mailto:eduardolukas@icloud.com">eduardolukas@icloud.com</a>
+          </li>
+          <li class="contact-item">
+            <span>LinkedIn</span><br>
+            <a href="http://linkedin.com/in/eduardolukas" target="_blank" rel="noopener noreferrer">
+              linkedin.com/in/eduardolukas
+            </a>
+          </li>
+          <li class="contact-item">
+            <span>GitHub</span><br>
+            <a href="https://github.com/eduardolukas" target="_blank" rel="noopener noreferrer">
+              github.com/eduardolukas
+            </a>
+          </li>
+        </ul>
+      </section>
+    </main>
+
+    <footer>
+      © <span id="year"></span> Lukas Eduardo – Portfólio em construção.
+    </footer>
+  </div>
+
+  <script>
+    // Atualiza ano no rodapé automaticamente
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
